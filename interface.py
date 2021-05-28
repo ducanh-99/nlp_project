@@ -2,7 +2,10 @@
 # sys.path.append('D:/Tai Lieu/HUST-Study/20202/NLP/project/code')
 
 from flask import Flask, request, render_template
+
 from url_input import get_url
+
+
 from NLP import findAll
 
 app = Flask(__name__)
