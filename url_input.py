@@ -12,7 +12,7 @@ def get_information(soup):
     title = soup.h1.text
     information.append(title)
 
-    detail = soup.find("div", {"class": "detail text-content"}).text
+    detail = soup.find("div", {"class": "detail"}).text
     information.append(detail)
 
     moreinfor = soup.find("div", {"class": "moreinfor"})

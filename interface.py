@@ -3,7 +3,7 @@
 
 from flask import Flask, request, render_template
 
-from url_input import get_url
+from url_input import get_url, get_information
 
 
 from NLP import findAll
@@ -17,7 +17,8 @@ def my_form():
 @app.route('/', methods=['POST'])
 def information():
     url = request.form['text']
-    infor = get_url(url)
+    soup = get_url(url)
+    infor = get_information(soup=soup)
     typeE, cateE, ae, road, dt, ct, pr, number, fullname = findAll(infor) 
     return render_template('homepage.html', output=infor, input=url,typeE = ', '.join(typeE),\
                                             cateE = ', '.join(cateE),ae=', '.join(ae),road=', '.join(road),\
