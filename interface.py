@@ -22,8 +22,8 @@ def information():
 
     typeE, cateE, ae, road, dt, ct, pr, number, fullname = findAll(infor) 
     return render_template('homepage.html', output=infor, input=url,typeE = ', '.join(typeE),\
-                                            cateE = ', '.join(cateE),ae=', '.join(ae),road=', '.join(road),\
-                                            dt=', '.join(dt),ct =', '.join(ct), pr=', '.join(pr),\
+                                            cateE=', '.join(cateE),ae=', '.join(ae),road=', '.join(road),\
+                                            dt=', '.join(dt),ct=', '.join(ct), pr=', '.join(pr),\
                                             number=', '.join(str(i) for i in number), fullname=', '.join(fullname))
 
 if __name__ == '__main__':
