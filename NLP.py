@@ -440,7 +440,7 @@ def findNumber(words, tags, tien, donvi_tien=donvi_tien):
 
 
 # Tìm họ tên
-def findName(words, tags, road, district, city, ten, ho):
+def findName(words, tags, road, district, city, ten, ho, t= 1):
     cand = findCandidateByTags(words, tags, ['Np'])
     cand = remove_(cand, road)
     cand = remove_(cand, district)
@@ -459,7 +459,8 @@ def findName(words, tags, road, district, city, ten, ho):
                 if j in i: fullname.append(i)
                 else: fullname.append(i+' '+j)
     else: fullname = na
-    return fullname[:2]
+    if t==0: return fullname
+    return na
 
 
 # In[102]:
@@ -523,7 +524,10 @@ def findElement1(m):
     rd = checkAdd(rd,[])
     dt = checkAdd(dt,[])
     ct = checkAdd(ct,[])
-    fullname = checkAdd(fullname,[])
+    for i in rd:
+        for j in i:
+            fullname = checkAdd(fullname, j)
+    fullname = checkAdd(fullname, [])
     return rd, dt, ct, fullname
 
 
