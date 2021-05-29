@@ -12,7 +12,10 @@ def get_information(soup):
     title = soup.h1.text
     information.append(title)
 
-    detail = soup.find("div", {"class": "detail"}).text
+    try:
+        detail = soup.find("div", {"class": "detail text-content"}).text
+    except:
+        detail = soup.find("div", {"class": "detail"}).text
     information.append(detail)
 
     moreinfor = soup.find("div", {"class": "moreinfor"})
@@ -30,12 +33,12 @@ def get_information(soup):
 
     return '\n'.join(information)
 
-
-if __name__ == "__main__":
-    url = input()
+def main(url):
     soup = get_url(url)
-    output = get_information(soup)
-    print(output)
-'''
-https://alonhadat.com.vn/ban-gap-biet-thu-mini-sang-trong-dang-cap-hem-o-to-6m-co-via-he-binh-gia-gia-tot-8514386.html
-'''
+    return get_information(soup)
+
+# if __name__ == "__main__":
+#     url = input()
+#     soup = get_url(url)
+#     output = get_information(soup)
+#     print(output)
