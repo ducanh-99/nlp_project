@@ -25,4 +25,4 @@ def information():
                                             number=', '.join(str(i) for i in number), fullname=', '.join(fullname))
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
