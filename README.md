@@ -13,7 +13,7 @@ Step 2: Create an environment
 ```bash
  python3 -m venv env
 ```
-Step 3:
+Step 3: Active environment
 ```bash
 for Windows: env\Scripts\activate
 ```
@@ -25,13 +25,15 @@ Step 4: Install requirements
 pip install -r requirements.txt
 ```
 
-## Crawl Data
+## Run UI
 
-Run:
+After entering environment mode run the server using the command:
 
-```bash
-python3 crawl.py
 ```
+python interface.py
+```
+project will be run on: http://127.0.0.1:5000/
+
 
 ## Team
 
