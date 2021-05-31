@@ -25,10 +25,18 @@ def information():
         return {"message": "error"}
 
     typeE, cateE, ae, road, dt, ct, pr, number, fullname = findAll(infor)
+    if number != [[]]:
+        number = ', '.join(str(i) for i in number)
+    else:
+        number = 'None'
+    if fullname != [[]]:
+        fullname = ', '.join(fullname)
+    else:
+        fullname = 'None'
     return render_template('homepage.html', output=infor, input=url, typeE=', '.join(typeE),
                            cateE=', '.join(cateE), ae=', '.join(ae), road=', '.join(road),
                            dt=', '.join(dt), ct=', '.join(ct), pr=', '.join(pr),
-                           number=', '.join(str(i) for i in number), fullname=', '.join(fullname))
+                           number=number, fullname=fullname)
 
 
 if __name__ == '__main__':
